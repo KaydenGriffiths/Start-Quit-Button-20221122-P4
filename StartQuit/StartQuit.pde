@@ -4,6 +4,11 @@ int appWidth, appHeight;
 int quitX, quitY, quitWidth, quitHeight;
 //
 void setup() {
+  //
+  //size time
+  frameRate(45);
+  size( 800, 600 );
+  //
   appWidth=width;
   appHeight=height;
   //Population
@@ -12,8 +17,6 @@ void setup() {
   quitWidth=width*1/2;
   quitHeight=height*1/2;
   //
-  frameRate(45);
-  size( 800, 600 );
 } //End setup
 //
 void draw() 
