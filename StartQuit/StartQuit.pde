@@ -1,7 +1,7 @@
 //Globabl Variables
 Boolean startOS=false, StartPlaying=false;
 int appWidth, appHeight;
-int quitX, quitY, quitWidth, quitHeight;
+float quitX, quitY, quitWidth, quitHeight;
 //
 void setup() {
   //
@@ -11,11 +11,12 @@ void setup() {
   //
   appWidth=width;
   appHeight=height;
+  //
   //Population
-  quitX=width*1/4;
-  quitY=height*1/4;
-  quitWidth=width*1/2;
-  quitHeight=height*1/2;
+  quitX=appWidth*1/4;
+  quitY=appHeight*1/4;
+  quitWidth=appWidth*1/2;
+  quitHeight=appHeight*1/2;
   //
 } //End setup
 //
@@ -23,7 +24,7 @@ void draw()
 {
   if ( StartPlaying==true ) { //Actual start IF
     background(0); //Night Mode not considered yet
-    rect( quitX, quitY, 400, 300 ); //Quit Button
+    rect( quitX, quitY, quitWidth, quitHeight ); //Quit Button
   }
   //
 } //End draw
