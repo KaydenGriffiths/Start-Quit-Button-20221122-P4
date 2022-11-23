@@ -2,6 +2,7 @@
 Boolean startOS=false, StartPlaying=false;
 int appWidth, appHeight;
 float quitX, quitY, quitWidth, quitHeight;
+color quitButtonColor, yellow=#FFFF00 , purple=#9600FF;
 //
 void setup() {
   //
@@ -25,14 +26,30 @@ void draw()
 {
   if ( StartPlaying==true ) { //Actual start IF
     background(0); //Night Mode not considered yet
+    //
+    //Logical Rectangle
+    //println("X-Value", quitX, mouseX, quitX+quitWidth);
+    //println("Y-Value", quitY, mouseY, quitY+quitHeight);
+    //
+    //Quit Button Hover Over Feature
+    if ( mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) {
+      quitButtonColor = yellow; //Remember Knight Mode
+    } else {
+      quitButtonColor = purple; //Remember Day Mode
+    } //End Hover Over
+    //
+    fill( quitButtonColor ); 
     rect( quitX, quitY, quitWidth, quitHeight ); //Quit Button
   }
-} //End draw`
+} //End draw
 //
 void keyPressed() 
 {
   //
-  if ( key==' ' && startOS==true) StartPlaying = true;
+  if ( key==' ' && startOS==true) { 
+    StartPlaying = true; 
+    println("Welcome to the Game!!!");
+  }
   //
   //Prototype Key Board Quit Button OR shortcut
   if ( key=='L' || key=='l' ) exit();
@@ -47,11 +64,15 @@ void mousePressed()
   //
   //OS Level Start Button
   startOS = true;
-  if ( startOS==true ) println("To Start, Press the Space Bar");
+  if ( startOS==true) println("To Start, Press the Space Bar");
   //
   //Quit Button: Logical Rectangle see println in draw()
-  if ( ) {exit(); println("bye!");} 
-  //
+  if ( StartPlaying==true) {
+    if ( mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) { // if ( StartPlaying==true && then the rest of the code works just aswell
+      exit(); 
+      println("bye!");
+    }
+  }
 } //End mousePressed
 //
 //End Main Program
