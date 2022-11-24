@@ -17,10 +17,12 @@ void setup() {
 } //End setup
 //
 void draw() 
-{
+{ 
+  //debugLogicalRect();
+  //
   if ( StartPlaying==true ) { //Actual start IF
-  programDraw();
-}
+    programDraw();
+  }
 } //End draw
 //
 void keyPressed() 
@@ -38,6 +40,7 @@ void mousePressed()
 {
   OS_Start();
   quitButtonMousePressed();
+}
 //End mousePressed
 //
 //End Main Program
