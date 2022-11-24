@@ -1,7 +1,9 @@
 //Globabl Variables
-Boolean startOS=false, StartPlaying=false;
+Boolean startOS=false, StartPlaying=false, text=false;
+String exitText = "Exit";
 int appWidth, appHeight;
-float quitX, quitY, quitWidth, quitHeight;
+int fontSize;
+float quitX, quitY, quitWidth, quitHeight, textX, textY, textWidth, textHeight;
 color quitButtonColor, yellow=#FFFF00, purple=#9600FF, white=#FFFFFF;
 PFont textFont;
 //
@@ -22,6 +24,11 @@ void setup() {
   quitY= centerY - ( appHeight * 1/4 );
   quitWidth= appWidth * 1/2; //Line not point, thus use formula
   quitHeight= appHeight * 1/2; //Line not point, thus use formula
+  //
+  textFont = createFont("Arial", 55);
+  textWidth = appWidth*1/12;
+  textHeight = appHeight*1/20;
+  //
 } //End setup
 //
 void draw() 
@@ -36,16 +43,24 @@ void draw()
     //Quit Button Hover Over Feature
     if ( mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) {
       quitButtonColor = yellow; //Remember Knight Mode
+      text=true;
     } else {
       quitButtonColor = purple; //Remember Day Mode
+      text=false;
     } //End Hover Over
-    //
+    // 
     fill( quitButtonColor ); 
     rect( quitX, quitY, quitWidth, quitHeight ); //Quit Button
-    if ( mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) {       
-      textFont = createFont("Harrington", 55);
-      fill( white); 
-      rect( mouseX, mouseY, 200, 50);
+    //
+    if (text=true && mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) {         
+      fill(0,0,0);
+      rect(mouseX, mouseY, textWidth, textHeight);
+    }
+    if (text=true && mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) {         
+      fill(white);
+      fontSize=25;
+      textFont(textFont ,fontSize);
+      text( exitText, mouseX*1.03, mouseY*1.01, textWidth*2, textHeight*2);
     }
   }
 } //End draw
