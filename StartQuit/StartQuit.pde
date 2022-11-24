@@ -10,7 +10,7 @@ PFont textFont;
 void setup() {
   //
   //size time
-  frameRate(60);
+  frameRate(900);
   size( 800, 600 );
   println("Display Width:", width, "\tDisplay Height:", height );
   //
