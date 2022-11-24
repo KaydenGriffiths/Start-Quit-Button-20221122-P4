@@ -13,9 +13,6 @@ void setup() {
   size( 800, 600 );
   //
   displayOrientation();
-  appWidth=width;
-  appHeight=height;
-  //
   population();
 } //End setup
 //
@@ -28,34 +25,19 @@ void draw()
 //
 void keyPressed() 
 {
-  //
+  //User Intiated Start Screen
   if ( key==' ' && startOS==true ) { 
     StartPlaying = true; 
     println("Welcome to the Game!!!");
   }
   //
-  //Prototype Key Board Quit Button OR shortcut
-  if ( keyCode == ESC ||  key=='L' || key=='l') {
-    exit(); 
-    println("bye!");
-  }
-  //Colored Background time!!!!! 
-
+  KeyBoardShortCuts();
 } //End keypressed
 //
 void mousePressed() 
 {
-  //
-  //OS Level Start Button
-  startOS = true;
-  if ( startOS==true && StartPlaying==false ) println("To Start, Press the Space Bar");
-  //
-  //Quit Button: Logical Rectangle see println in draw()
-  if ( StartPlaying==true && mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) { // if ( StartPlaying==true && then the rest of the code works just aswell
-    exit(); 
-    println("bye!");
-  }
-}
+  OS_Start();
+  quitButtonMousePressed();
 //End mousePressed
 //
 //End Main Program

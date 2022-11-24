@@ -1,4 +1,6 @@
 void displayOrientation() {
+  appWidth=width;
+  appHeight=height;
   println("\t\t\tWidth="+width, "\tHeight="+height);
   println("Display Monitor:", "\twidth:"+displayWidth, "height:"+displayHeight);
   //
