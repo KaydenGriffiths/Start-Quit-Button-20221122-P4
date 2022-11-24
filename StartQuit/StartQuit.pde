@@ -60,7 +60,7 @@ void draw()
       fill(white);
       fontSize=25;
       textFont(textFont ,fontSize);
-      text( exitText, mouseX*1.03, mouseY*1.01, textWidth*2, textHeight*2);
+      text( exitText, mouseX*103/100, mouseY*101/100, textWidth*2, textHeight*2);
     }
   }
 } //End draw
