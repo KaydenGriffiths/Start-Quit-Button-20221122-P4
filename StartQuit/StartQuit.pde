@@ -9,7 +9,7 @@ PFont textFont;
 //
 void setup() {
   //
-  //size time; Display & Orientation Alogirthms not considered yet
+  //Size Time
   frameRate(9000);
   size( 800, 600 );
   println("Display Width:", width, "\tDisplay Height:", height );
