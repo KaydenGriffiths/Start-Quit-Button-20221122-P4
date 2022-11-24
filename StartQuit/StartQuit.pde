@@ -8,16 +8,16 @@ color quitButtonColor, yellow=#FFFF00, purple=#9600FF, white=#FFFFFF;
 PFont textFont;
 //
 void setup() {
-  //
   //Size Time
   frameRate(9000);
   size( 800, 600 );
   println("Display Width:", width, "\tDisplay Height:", height );
   //
+  displayOrientation();
   appWidth=width;
   appHeight=height;
   //
-  //Population
+  //
   float centerX = appWidth * 1/2;
   float centerY = appHeight * 1/2;
   quitX= centerX - ( appWidth *1/4 );
