@@ -10,8 +10,8 @@ PFont textFont;
 void setup() {
   //
   //size time
-  frameRate(900);
-  size( 800, 600 );
+  frameRate(9000);
+  size( 1200, 900 );
   println("Display Width:", width, "\tDisplay Height:", height );
   //
   appWidth=width;
@@ -74,11 +74,12 @@ void keyPressed()
   }
   //
   //Prototype Key Board Quit Button OR shortcut
-  if ( key=='L' || key=='l' ) exit();
-  if ( keyCode == ESC ) {
+  if ( keyCode == ESC ||  key=='L' || key=='l') {
     exit(); 
     println("bye!");
   }
+  //Colored Background time!!!!! 
+
 } //End keypressed
 //
 void mousePressed() 
