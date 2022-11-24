@@ -9,9 +9,9 @@ PFont textFont;
 //
 void setup() {
   //
-  //size time
+  //size time; Display & Orientation Alogirthms not considered yet
   frameRate(9000);
-  size( 1200, 900 );
+  size( 800, 600 );
   println("Display Width:", width, "\tDisplay Height:", height );
   //
   appWidth=width;
@@ -28,7 +28,6 @@ void setup() {
   textFont = createFont("Arial", 55);
   textWidth = appWidth*1/12;
   textHeight = appHeight*1/20;
-  //
 } //End setup
 //
 void draw() 
