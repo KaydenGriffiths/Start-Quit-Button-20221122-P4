@@ -2,13 +2,15 @@
 Boolean startOS=false, StartPlaying=false;
 int appWidth, appHeight;
 float quitX, quitY, quitWidth, quitHeight;
-color quitButtonColor, yellow=#FFFF00 , purple=#9600FF;
+color quitButtonColor, yellow=#FFFF00, purple=#9600FF, white=#FFFFFF;
+PFont textFont;
 //
 void setup() {
   //
   //size time
-  frameRate(45);
+  frameRate(60);
   size( 800, 600 );
+  println("Display Width:", width, "\tDisplay Height:", height );
   //
   appWidth=width;
   appHeight=height;
@@ -40,6 +42,11 @@ void draw()
     //
     fill( quitButtonColor ); 
     rect( quitX, quitY, quitWidth, quitHeight ); //Quit Button
+    if ( mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) {       
+      textFont = createFont("Harrington", 55);
+      fill( white); 
+      rect( mouseX, mouseY, 200, 50);
+    }
   }
 } //End draw
 //
@@ -67,11 +74,11 @@ void mousePressed()
   if ( startOS==true && StartPlaying==false ) println("To Start, Press the Space Bar");
   //
   //Quit Button: Logical Rectangle see println in draw()
-    if ( StartPlaying==true && mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) { // if ( StartPlaying==true && then the rest of the code works just aswell
-      exit(); 
-      println("bye!");
-    }
+  if ( StartPlaying==true && mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) { // if ( StartPlaying==true && then the rest of the code works just aswell
+    exit(); 
+    println("bye!");
   }
+}
 //End mousePressed
 //
 //End Main Program
