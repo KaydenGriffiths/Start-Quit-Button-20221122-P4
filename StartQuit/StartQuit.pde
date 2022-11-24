@@ -11,57 +11,19 @@ void setup() {
   //Size Time
   frameRate(9000);
   size( 800, 600 );
-  println("Display Width:", width, "\tDisplay Height:", height );
   //
   displayOrientation();
   appWidth=width;
   appHeight=height;
   //
-  //
-  float centerX = appWidth * 1/2;
-  float centerY = appHeight * 1/2;
-  quitX= centerX - ( appWidth *1/4 );
-  quitY= centerY - ( appHeight * 1/4 );
-  quitWidth= appWidth * 1/2; //Line not point, thus use formula
-  quitHeight= appHeight * 1/2; //Line not point, thus use formula
-  //
-  textFont = createFont("Arial", 55);
-  textWidth = appWidth*1/12;
-  textHeight = appHeight*1/20;
+  population();
 } //End setup
 //
 void draw() 
 {
   if ( StartPlaying==true ) { //Actual start IF
-    background(0); //Night Mode not considered yet
-    //
-    //Logical Rectangle
-    //println("X-Value", quitX, mouseX, quitX+quitWidth);
-    //println("Y-Value", quitY, mouseY, quitY+quitHeight);
-    //
-    //Quit Button Hover Over Feature
-    if ( mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) {
-      quitButtonColor = yellow; //Remember Knight Mode
-      text=true;
-    } else {
-      quitButtonColor = purple; //Remember Day Mode
-      text=false;
-    } //End Hover Over
-    // 
-    fill( quitButtonColor ); 
-    rect( quitX, quitY, quitWidth, quitHeight ); //Quit Button
-    //
-    if (text=true && mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) {         
-      fill(0,0,0);
-      rect(mouseX, mouseY, textWidth, textHeight);
-    }
-    if (text=true && mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) {         
-      fill(white);
-      fontSize=25;
-      textFont(textFont ,fontSize);
-      text( exitText, mouseX*103/100, mouseY*101/100, textWidth*2, textHeight*2);
-    }
-  }
+  programDraw();
+}
 } //End draw
 //
 void keyPressed() 
