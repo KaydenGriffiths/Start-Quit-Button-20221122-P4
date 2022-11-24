@@ -46,7 +46,7 @@ void draw()
 void keyPressed() 
 {
   //
-  if ( key==' ' && startOS==true) { 
+  if ( key==' ' && startOS==true ) { 
     StartPlaying = true; 
     println("Welcome to the Game!!!");
   }
@@ -64,15 +64,14 @@ void mousePressed()
   //
   //OS Level Start Button
   startOS = true;
-  if ( startOS==true) println("To Start, Press the Space Bar");
+  if ( startOS==true && StartPlaying==false ) println("To Start, Press the Space Bar");
   //
   //Quit Button: Logical Rectangle see println in draw()
-  if ( StartPlaying==true) {
-    if ( mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) { // if ( StartPlaying==true && then the rest of the code works just aswell
+    if ( StartPlaying==true && mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) { // if ( StartPlaying==true && then the rest of the code works just aswell
       exit(); 
       println("bye!");
     }
   }
-} //End mousePressed
+//End mousePressed
 //
 //End Main Program
